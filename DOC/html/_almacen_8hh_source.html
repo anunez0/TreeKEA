@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>TreeKEA: Fichero Fuente Almacen.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TreeKEA
+   &#160;<span id="projectnumber">version 29-may-2018</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Almacen.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_almacen_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef _ALMACEN_HH_</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define _ALMACEN_HH_</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_sala_8hh.html">Sala.hh</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_sistema_8hh.html">Sistema.hh</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;BinTree.hh&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_almacen.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_almacen.html">Almacen</a> {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_almacen.html#a0800dd9ff516f710e4cff89b6f5d5a4a">   31</a></span>&#160;    BinTree&lt;int&gt; <a class="code" href="class_almacen.html#a0800dd9ff516f710e4cff89b6f5d5a4a">aid</a>;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_almacen.html#acae00c6ee986edf2a66b07987896b495">   34</a></span>&#160;    vector&lt;Sala&gt; <a class="code" href="class_almacen.html#acae00c6ee986edf2a66b07987896b495">vsal</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//Modificadoras</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> i_distribuir(<span class="keywordtype">string</span> prod, <span class="keywordtype">int</span> n, <span class="keyword">const</span> BinTree&lt;int&gt;&amp; aid);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//Lectura y escritura</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> read_bintree_int(BinTree&lt;int&gt;&amp; a, <span class="keywordtype">int</span> marca);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//Creadoras de objetos</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span>    <a class="code" href="class_almacen.html">Almacen</a>();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//Modificadoras</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> inicializar(<span class="keywordtype">int</span> n);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> poner_items(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> prod, <span class="keywordtype">int</span> n, <a class="code" href="class_sistema.html">Sistema</a>&amp; sist);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">int</span> quitar_items(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> prod, <span class="keywordtype">int</span> n, <a class="code" href="class_sistema.html">Sistema</a>&amp; sist);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> distribuir(<span class="keywordtype">string</span> prod, <span class="keywordtype">int</span> n, <a class="code" href="class_sistema.html">Sistema</a>&amp; sist);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> compactar(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> reorganizar(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    </div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> redimensionar(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> f, <span class="keywordtype">int</span> c);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//Consultoras</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span>    <a class="code" href="class_sala.html">Sala</a> consultar_sal(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="_sala_8hh_html"><div class="ttname"><a href="_sala_8hh.html">Sala.hh</a></div><div class="ttdoc">Especificación de la clase Sala. </div></div>
+<div class="ttc" id="class_almacen_html_a0800dd9ff516f710e4cff89b6f5d5a4a"><div class="ttname"><a href="class_almacen.html#a0800dd9ff516f710e4cff89b6f5d5a4a">Almacen::aid</a></div><div class="ttdeci">BinTree&lt; int &gt; aid</div><div class="ttdoc">Árbol de identificadores de sala. </div><div class="ttdef"><b>Definition:</b> <a href="_almacen_8hh_source.html#l00031">Almacen.hh:31</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="_sistema_8hh_html"><div class="ttname"><a href="_sistema_8hh.html">Sistema.hh</a></div><div class="ttdoc">Especificación de la clase Sistema. </div></div>
+<div class="ttc" id="class_sistema_html"><div class="ttname"><a href="class_sistema.html">Sistema</a></div><div class="ttdoc">Representa un sistema. </div><div class="ttdef"><b>Definition:</b> <a href="_sistema_8hh_source.html#l00023">Sistema.hh:23</a></div></div>
+<div class="ttc" id="class_sala_html"><div class="ttname"><a href="class_sala.html">Sala</a></div><div class="ttdoc">Representa una sala. </div><div class="ttdef"><b>Definition:</b> <a href="_sala_8hh_source.html#l00024">Sala.hh:24</a></div></div>
+<div class="ttc" id="class_almacen_html_acae00c6ee986edf2a66b07987896b495"><div class="ttname"><a href="class_almacen.html#acae00c6ee986edf2a66b07987896b495">Almacen::vsal</a></div><div class="ttdeci">vector&lt; Sala &gt; vsal</div><div class="ttdoc">Vector de salas. </div><div class="ttdef"><b>Definition:</b> <a href="_almacen_8hh_source.html#l00034">Almacen.hh:34</a></div></div>
+<div class="ttc" id="class_almacen_html"><div class="ttname"><a href="class_almacen.html">Almacen</a></div><div class="ttdoc">Representa un almacén. </div><div class="ttdef"><b>Definition:</b> <a href="_almacen_8hh_source.html#l00027">Almacen.hh:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

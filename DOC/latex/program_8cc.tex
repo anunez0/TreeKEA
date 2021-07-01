@@ -1,0 +1,112 @@
+\hypertarget{program_8cc}{}\section{Referencia del Archivo program.\+cc}
+\label{program_8cc}\index{program.\+cc@{program.\+cc}}
+
+
+Programa principal para el ejercicio {\itshape Tree\+K\+EA}  
+
+
+Dependencia gráfica adjunta para program.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{program_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Programa principal para el ejercicio {\itshape Tree\+K\+EA} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Programa principal para el ejercicio {\itshape Tree\+K\+EA} 
+
+
+
+\subsection{Documentación de las funciones}
+\index{program.\+cc@{program.\+cc}!main@{main}}
+\index{main@{main}!program.\+cc@{program.\+cc}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Programa principal para el ejercicio {\itshape Tree\+K\+EA} 
+
+
+
+Definición en la línea 27 del archivo program.\+cc.
+
+
+\begin{DoxyCode}
+27            \{
+28     \hyperlink{class_almacen}{Almacen} alm;
+29     \hyperlink{class_sistema}{Sistema} sist;
+30     \textcolor{keywordtype}{int} n, id, f, c, i, j;
+31     \textcolor{keywordtype}{string} op, prod;
+32     cin >> n;
+33     alm.\hyperlink{class_almacen_ae953db6cd573ea3f54e6a02245a25175}{inicializar}(n);
+34     cin >> op;
+35     \textcolor{keywordflow}{while} (op != \textcolor{stringliteral}{"fin"}) \{
+36         \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"poner\_prod"}) \{
+37             cin >> prod;
+38             cout << op << \textcolor{charliteral}{' '} << prod << endl;
+39             sist.\hyperlink{class_sistema_af23b15605b8c26c79b1e195eb164a06f}{poner\_prod}(prod);
+40         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"quitar\_prod"}) \{
+41             cin >> prod;
+42             cout << op << \textcolor{charliteral}{' '} << prod << endl;
+43             sist.\hyperlink{class_sistema_a9e35414af566cf486d09504014a26f40}{quitar\_prod}(prod);
+44         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"poner\_items"}) \{
+45             cin >> \textcolor{keywordtype}{id} >> prod >> n;
+46             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << \textcolor{charliteral}{' '} << prod << \textcolor{charliteral}{' '} << n << endl;
+47             n = alm.\hyperlink{class_almacen_a0285105782dc12b843cbdad492887956}{poner\_items}(\textcolor{keywordtype}{id}, prod, n, sist);
+48             \textcolor{keywordflow}{if} (n != -1) cout << \textcolor{stringliteral}{"  "} << n << endl;
+49         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"quitar\_items"}) \{
+50             cin >> \textcolor{keywordtype}{id} >> prod >> n;
+51             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << \textcolor{charliteral}{' '} << prod << \textcolor{charliteral}{' '} << n << endl;
+52             n = alm.\hyperlink{class_almacen_a2ed6c0f1a88f8ba8d2ad2268640a890f}{quitar\_items}(\textcolor{keywordtype}{id}, prod, n, sist);
+53             \textcolor{keywordflow}{if} (n != -1) cout << \textcolor{stringliteral}{"  "} << n << endl;
+54         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"distribuir"}) \{
+55             cin >> prod >> n;
+56             cout << op << \textcolor{charliteral}{' '} << prod << \textcolor{charliteral}{' '} << n << endl;
+57             n = alm.\hyperlink{class_almacen_a257546bb178d1bc7b08443697560281a}{distribuir}(prod, n, sist);
+58             \textcolor{keywordflow}{if} (n != -1) cout << \textcolor{stringliteral}{"  "} << n << endl;
+59         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"compactar"}) \{
+60             cin >> id;
+61             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << endl;
+62             alm.\hyperlink{class_almacen_a9b0a893ac5ea4774bd362e297b2c3770}{compactar}(\textcolor{keywordtype}{id});
+63         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"reorganizar"}) \{
+64             cin >> id;
+65             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << endl;
+66             alm.\hyperlink{class_almacen_a9e27219c735096dab9d5d3edc2ae2012}{reorganizar}(\textcolor{keywordtype}{id});
+67         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"redimensionar"}) \{
+68             cin >> \textcolor{keywordtype}{id} >> f >> c;
+69             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << \textcolor{charliteral}{' '} << f << \textcolor{charliteral}{' '} << c << endl;
+70             alm.\hyperlink{class_almacen_a477373756d8671d1acef1c7d84a926a9}{redimensionar}(\textcolor{keywordtype}{id}, f, c);
+71         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"inventario"}) \{
+72             cout << op << endl;
+73             sist.\hyperlink{class_sistema_ae56405e21fcc545cb27b0a415752ced4}{inventario}();
+74         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"escribir"}) \{
+75             cin >> id;
+76             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << endl;
+77             alm.\hyperlink{class_almacen_ad9a5ab33dd0c247c5d09496fa7d202f1}{consultar\_sal}(\textcolor{keywordtype}{id}).\hyperlink{class_sala_a31cac453fd5002b715706482b207ac1f}{escribir}();
+78         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"consultar\_pos"}) \{
+79             cin >> \textcolor{keywordtype}{id} >> i >> j;
+80             cout << op << \textcolor{charliteral}{' '} << \textcolor{keywordtype}{id} << \textcolor{charliteral}{' '} << i << \textcolor{charliteral}{' '} << j << endl;
+81             prod = alm.\hyperlink{class_almacen_ad9a5ab33dd0c247c5d09496fa7d202f1}{consultar\_sal}(\textcolor{keywordtype}{id}).\hyperlink{class_sala_a7a162d097c0f7e295cc17ceb286930b2}{consultar\_pos}(i, j);
+82             cout << \textcolor{stringliteral}{"  "} << prod << endl;
+83         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (op == \textcolor{stringliteral}{"consultar\_prod"}) \{
+84             cin >> prod;
+85             cout << op << \textcolor{charliteral}{' '} << prod << endl;
+86             n = sist.\hyperlink{class_sistema_a6e61a7675d9d4c9f5fed403bd29ea021}{consultar\_prod}(prod);
+87             \textcolor{keywordflow}{if} (n != -1) cout << \textcolor{stringliteral}{"  "} << n << endl;
+88         \}
+89         cin >> op;
+90     \}
+91     cout << op << endl;
+92 \}
+\end{DoxyCode}

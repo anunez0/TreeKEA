@@ -1,0 +1,230 @@
+\hypertarget{class_sistema}{}\section{Referencia de la Clase Sistema}
+\label{class_sistema}\index{Sistema@{Sistema}}
+
+
+Representa un sistema.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sistema_a815b07845ef6b03247b239333fe75e28}{Sistema} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
+void \hyperlink{class_sistema_af23b15605b8c26c79b1e195eb164a06f}{poner\+\_\+prod} (string prod)
+\begin{DoxyCompactList}\small\item\em Si el producto ya existía se produce un error, si no el producto se da de alta en el sistema con cero unidades. \end{DoxyCompactList}\item 
+void \hyperlink{class_sistema_a9e35414af566cf486d09504014a26f40}{quitar\+\_\+prod} (string prod)
+\begin{DoxyCompactList}\small\item\em Si el producto no existe, o ya existe y quedan unidades se produce un error, si no el producto se da de baja en el sistema. \end{DoxyCompactList}\item 
+void \hyperlink{class_sistema_a313b296b88c2991348ce353b1e7fb166}{sumar\+\_\+prod} (string prod, int n)
+\begin{DoxyCompactList}\small\item\em Se suma el entero a las unidades del producto. \end{DoxyCompactList}\item 
+int \hyperlink{class_sistema_a6e61a7675d9d4c9f5fed403bd29ea021}{consultar\+\_\+prod} (string prod) const 
+\begin{DoxyCompactList}\small\item\em Si el producto no existe, se produce un error y se devuelve -\/1. Si existe se devuelve cuántas unidades hay en total en el almacén. \end{DoxyCompactList}\item 
+void \hyperlink{class_sistema_ae56405e21fcc545cb27b0a415752ced4}{inventario} () const 
+\begin{DoxyCompactList}\small\item\em Para cada producto en el sistema se escribe su identificador y la cantidad total en el almacén, ordenado por identificador de producto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, int $>$ \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_sistema}{Sistema} de productos con sus unidades en el almacén. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa un sistema. 
+
+Definición en la línea 23 del archivo Sistema.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Sistema@{Sistema}!Sistema@{Sistema}}
+\index{Sistema@{Sistema}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{Sistema()}{Sistema()}}]{\setlength{\rightskip}{0pt plus 5cm}Sistema\+::\+Sistema (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sistema_a815b07845ef6b03247b239333fe75e28}{}\label{class_sistema_a815b07845ef6b03247b239333fe75e28}
+
+
+Creadora por defecto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un sistema. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo Sistema.\+cc.
+
+
+\begin{DoxyCode}
+9                  \{
+10 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Sistema@{Sistema}!poner\+\_\+prod@{poner\+\_\+prod}}
+\index{poner\+\_\+prod@{poner\+\_\+prod}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{poner\+\_\+prod(string prod)}{poner_prod(string prod)}}]{\setlength{\rightskip}{0pt plus 5cm}void Sistema\+::poner\+\_\+prod (
+\begin{DoxyParamCaption}
+\item[{string}]{prod}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sistema_af23b15605b8c26c79b1e195eb164a06f}{}\label{class_sistema_af23b15605b8c26c79b1e195eb164a06f}
+
+
+Si el producto ya existía se produce un error, si no el producto se da de alta en el sistema con cero unidades. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si prod ya existía se escribe \char`\"{}error\char`\"{}, si no prod se da de alta en el parámetro implícito con cero unidades. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 13 del archivo Sistema.\+cc.
+
+
+\begin{DoxyCode}
+13                                     \{
+14     \textcolor{keywordflow}{if} (\hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.find(prod) != \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.end()) cout << \textcolor{stringliteral}{"  error"} << endl;
+15     \textcolor{keywordflow}{else} \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}[prod];
+16 \}
+\end{DoxyCode}
+\index{Sistema@{Sistema}!quitar\+\_\+prod@{quitar\+\_\+prod}}
+\index{quitar\+\_\+prod@{quitar\+\_\+prod}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{quitar\+\_\+prod(string prod)}{quitar_prod(string prod)}}]{\setlength{\rightskip}{0pt plus 5cm}void Sistema\+::quitar\+\_\+prod (
+\begin{DoxyParamCaption}
+\item[{string}]{prod}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sistema_a9e35414af566cf486d09504014a26f40}{}\label{class_sistema_a9e35414af566cf486d09504014a26f40}
+
+
+Si el producto no existe, o ya existe y quedan unidades se produce un error, si no el producto se da de baja en el sistema. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si prod no existe, o ya existe y quedan unidades se escribe \char`\"{}error\char`\"{}, si no prod se da de baja en el parámetro implícito. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 19 del archivo Sistema.\+cc.
+
+
+\begin{DoxyCode}
+19                                      \{
+20     \textcolor{keywordflow}{if} (\hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.find(prod) == \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.end() or \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}[prod] > 0) cout << \textcolor{stringliteral}{"  error"} << endl;
+21     \textcolor{keywordflow}{else} \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.erase(prod);
+22 \}
+\end{DoxyCode}
+\index{Sistema@{Sistema}!sumar\+\_\+prod@{sumar\+\_\+prod}}
+\index{sumar\+\_\+prod@{sumar\+\_\+prod}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{sumar\+\_\+prod(string prod, int n)}{sumar_prod(string prod, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Sistema\+::sumar\+\_\+prod (
+\begin{DoxyParamCaption}
+\item[{string}]{prod, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{class_sistema_a313b296b88c2991348ce353b1e7fb166}{}\label{class_sistema_a313b296b88c2991348ce353b1e7fb166}
+
+
+Se suma el entero a las unidades del producto. 
+
+\begin{DoxyPrecond}{Precondición}
+prod existe 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se suma n a las unidades de prod. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 25 del archivo Sistema.\+cc.
+
+
+\begin{DoxyCode}
+25                                            \{
+26     \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}[prod] += n;
+27 \}
+\end{DoxyCode}
+\index{Sistema@{Sistema}!consultar\+\_\+prod@{consultar\+\_\+prod}}
+\index{consultar\+\_\+prod@{consultar\+\_\+prod}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+prod(string prod) const }{consultar_prod(string prod) const }}]{\setlength{\rightskip}{0pt plus 5cm}int Sistema\+::consultar\+\_\+prod (
+\begin{DoxyParamCaption}
+\item[{string}]{prod}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_sistema_a6e61a7675d9d4c9f5fed403bd29ea021}{}\label{class_sistema_a6e61a7675d9d4c9f5fed403bd29ea021}
+
+
+Si el producto no existe, se produce un error y se devuelve -\/1. Si existe se devuelve cuántas unidades hay en total en el almacén. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Si prod no existe, se escribe \char`\"{}error\char`\"{} y se devuelve -\/1. Si existe se devuelve cuántas unidades hay en total en el almacén. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 30 del archivo Sistema.\+cc.
+
+
+\begin{DoxyCode}
+30                                              \{
+31     map<string, int>::const\_iterator it = \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.find(prod);
+32     \textcolor{keywordflow}{if} (it == \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.end()) \{
+33         cout << \textcolor{stringliteral}{"  error"} << endl;
+34         \textcolor{keywordflow}{return} -1;
+35     \}
+36     \textcolor{keywordflow}{return} it->second;
+37 \}
+\end{DoxyCode}
+\index{Sistema@{Sistema}!inventario@{inventario}}
+\index{inventario@{inventario}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{inventario() const }{inventario() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Sistema\+::inventario (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_sistema_ae56405e21fcc545cb27b0a415752ced4}{}\label{class_sistema_ae56405e21fcc545cb27b0a415752ced4}
+
+
+Para cada producto en el sistema se escribe su identificador y la cantidad total en el almacén, ordenado por identificador de producto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Para cada producto en el parámetro implícito se escribe su identificador y la cantidad total en el almacén, ordenado por identificador de producto. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 40 del archivo Sistema.\+cc.
+
+
+\begin{DoxyCode}
+40                                \{
+41     \textcolor{keywordflow}{for} (map<string, int>::const\_iterator it = \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.begin(); it != \hyperlink{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{sist}.end(); ++it) cout << \textcolor{stringliteral}{"  "} 
+      << it->first << \textcolor{charliteral}{' '} << it->second << endl;
+42 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Sistema@{Sistema}!sist@{sist}}
+\index{sist@{sist}!Sistema@{Sistema}}
+\subsubsection[{\texorpdfstring{sist}{sist}}]{\setlength{\rightskip}{0pt plus 5cm}map$<$string, int$>$ Sistema\+::sist\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}{}\label{class_sistema_ae0458a62c678b51d3b0efde8b1effac2}
+
+
+\hyperlink{class_sistema}{Sistema} de productos con sus unidades en el almacén. 
+
+
+
+Definición en la línea 27 del archivo Sistema.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_sistema_8hh}{Sistema.\+hh}\item 
+\hyperlink{_sistema_8cc}{Sistema.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,527 @@
+//Juego de pruebas que hace énfasis en las operaciones poner_items, quitar_items y reorganizar
+
+
+//Entrada comentada
+
+
+//Se inicializa el árbol de identificadores de sala
+3
+1 2 0 0 3 0 0
+3 2
+4 3
+1 2
+//Se comprueba que el programa dimensiona bien las estanterías y que están vacías
+escribir 1
+escribir 2
+escribir 3
+//Se ponen productos en orden no alfabético
+poner_prod BBBB
+poner_prod CCCC
+poner_prod AAAA
+//Se comprueba que se han añadido los productos con cero unidades y que se escriben en orden alfabético
+inventario
+//Se comprueba que al poner un producto que ya existía se produce un error
+poner_prod AAAA
+//Se comprueba que al producirse un error el inventario no queda afectado
+inventario
+//Se comprueba que al intentar poner un ítem que no esté en el sistema se produce un error
+poner_items 1 DDDD 3
+//Se comprueba que la sala no ha sido afectada
+escribir 1
+//Se comprueba que los ítems se colocan en el orden esperado
+poner_items 1 BBBB 3
+escribir 1
+//Se comprueba que los ítems se colocan en el orden esperado
+poner_items 1 AAAA 1
+escribir 1
+//Se comprueba que al poner más ítems de los que caben en la sala se devuelve el número adecuado
+poner_items 1 CCCC 10
+//Se comprueba que la sala se encuentra como lo esperado
+escribir 1
+//Se comprueba que el inventario ha sido actualizado después de poner ítems
+inventario
+//Se comprueba que se produce un error al intentar quitar un producto que no se encuentra en el sistema
+quitar_items 1 DDDD 3
+//Se comprueba que el inventario no ha sido afectado
+escribir 1
+//Se comprueba que se quitan ítems en el orden esperado
+quitar_items 1 BBBB 1
+escribir 1
+//Se comprueba que al intentar quitar más ítems de los que hay en la sala se devuelve el número adecuado
+quitar_items 1 CCCC 10
+//Se comprueba que la sala tiene los productos en las posiciones esperadas
+escribir 1
+//Se comprueba qué ocurre cuando se intenta quitar un ítem que sí se encuentra en el sistema pero no en la sala
+quitar_items 1 CCCC 3
+//Se comprueba que la sala no ha sido afectada
+escribir 1
+//Se comprueba que el inventario ha sido actualizado
+inventario
+//Se comprueba que se produce un error cuando se intenta quitar un producto que no está en el sistema
+quitar_prod DDDD
+//Se comprueba que el inventario no ha sido modificado
+inventario
+//Se comprueba que se produce un error cuando se intenta quitar un producto cuyas unidades no sean cero
+quitar_prod AAAA
+inventario
+//Se comprueba que si se intenta quitar un producto cuyas unidades son cero el programa lo hace
+quitar_prod CCCC
+inventario
+//Se añaden productos para comprobar el funcionamiento de la operación reorganizar
+poner_prod CCCC
+poner_prod DDDD
+//Se ponen productos de forma desordenada
+poner_items 1 DDDD 2
+poner_items 1 CCCC 1
+//Se comprueba que la posición de los productos es totalmente aleatoria
+escribir 1
+reorganizar 1
+//Se comprueba que la operación reorganizar funciona como lo esperado
+escribir 1
+//Se cambian los productos de la sala para reafirmar el correcto funcionamiento de la operación reorganizar
+quitar_items 1 AAAA 10
+quitar_items 1 CCCC 10
+poner_prod ZZZZ
+poner_items 1 ZZZZ 1
+//Se comprueba que la posición de los productos es totalmente aleatoria, esta vez se observará qué ocurre cuando hay huecos en la estantería
+escribir 1
+reorganizar 1
+//Se comprueba que los productos se encuentran en la posición esperada
+escribir 1
+fin
+
+
+//Entrada sin comentar
+
+
+3
+1 2 0 0 3 0 0
+3 2
+4 3
+1 2
+escribir 1
+escribir 2
+escribir 3
+poner_prod BBBB
+poner_prod CCCC
+poner_prod AAAA
+inventario
+poner_prod AAAA
+inventario
+poner_items 1 DDDD 3
+escribir 1
+poner_items 1 BBBB 3
+escribir 1
+poner_items 1 AAAA 1
+escribir 1
+poner_items 1 CCCC 10
+escribir 1
+inventario
+quitar_items 1 DDDD 3
+escribir 1
+quitar_items 1 BBBB 1
+escribir 1
+quitar_items 1 CCCC 10
+escribir 1
+quitar_items 1 CCCC 3
+escribir 1
+inventario
+quitar_prod DDDD
+inventario
+quitar_prod AAAA
+inventario
+quitar_prod CCCC
+inventario
+poner_prod CCCC
+poner_prod DDDD
+poner_items 1 DDDD 2
+poner_items 1 CCCC 1
+escribir 1
+reorganizar 1
+escribir 1
+quitar_items 1 AAAA 10
+quitar_items 1 CCCC 10
+poner_prod ZZZZ
+poner_items 1 ZZZZ 1
+escribir 1
+reorganizar 1
+escribir 1
+fin
+
+
+//Salida comentada
+
+
+//Se comprueba que el programa dimensiona bien las estanterías y que están vacías
+escribir 1
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 2
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 3
+  NULL NULL
+  0
+poner_prod BBBB
+poner_prod CCCC
+poner_prod AAAA
+//Se comprueba que los productos añadidos se encuentran en orden alfabético y sus unidades son cero
+inventario
+  AAAA 0
+  BBBB 0
+  CCCC 0
+//Se comprueba que se produce un error al intentar añadir un producto ya existente y que el inventario no se ve afectado
+poner_prod AAAA
+  error
+inventario
+  AAAA 0
+  BBBB 0
+  CCCC 0
+//Se comprueba que se produce un error al intentar poner un ítem que no está en el sistema
+poner_items 1 DDDD 3
+  error
+//Se comprueba que la sala no ha sido afectada
+escribir 1
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+//Se comprueba que los productos se colocan de la forma esperada
+poner_items 1 BBBB 3
+  0
+escribir 1
+  NULL NULL
+  BBBB NULL
+  BBBB BBBB
+  3
+  BBBB 3
+poner_items 1 AAAA 1
+  0
+escribir 1
+  NULL NULL
+  BBBB AAAA
+  BBBB BBBB
+  4
+  AAAA 1
+  BBBB 3
+//Se comprueba que se devuelve el número adecuado y que se colocan los ítems de la forma esperada
+poner_items 1 CCCC 10
+  8
+//También se comprueba que el inventario de la sala aparece en orden alfabético
+escribir 1
+  CCCC CCCC
+  BBBB AAAA
+  BBBB BBBB
+  6
+  AAAA 1
+  BBBB 3
+  CCCC 2
+//Se comprueba que el inventario ha sido actualizado
+inventario
+  AAAA 1
+  BBBB 3
+  CCCC 2
+//Se comprueba que se produce un error al intentar quitar un producto que no existe en el sistema
+quitar_items 1 DDDD 3
+  error
+escribir 1
+  CCCC CCCC
+  BBBB AAAA
+  BBBB BBBB
+  6
+  AAAA 1
+  BBBB 3
+  CCCC 2
+//Se comprueba que los ítems se quitan de la forma esperada
+quitar_items 1 BBBB 1
+  0
+escribir 1
+  CCCC CCCC
+  BBBB AAAA
+  NULL BBBB
+  5
+  AAAA 1
+  BBBB 2
+  CCCC 2
+//Se comprueba que se devuelve el número esperado al quitar más ítems de los que hay en la sala
+quitar_items 1 CCCC 10
+  8
+escribir 1
+  NULL NULL
+  BBBB AAAA
+  NULL BBBB
+  3
+  AAAA 1
+  BBBB 2
+//Se comprueba que no se produce un error cuando se intenta quitar un ítem que no se encuentra en la sala
+quitar_items 1 CCCC 3
+  3
+escribir 1
+  NULL NULL
+  BBBB AAAA
+  NULL BBBB
+  3
+  AAAA 1
+  BBBB 2
+//Se comprueba que el inventario ha sido actualizado
+inventario
+  AAAA 1
+  BBBB 2
+  CCCC 0
+//Se comprueba que se produce un error cuando se intenta quitar un producto que no existe en el sistema
+quitar_prod DDDD
+  error
+inventario
+  AAAA 1
+  BBBB 2
+  CCCC 0
+//Se comprueba que se produce un error cuando se intenta quitar un producto cuyas unidades no son cero
+quitar_prod AAAA
+  error
+//Se comprueba que el inventario no ha sido modificado
+inventario
+  AAAA 1
+  BBBB 2
+  CCCC 0
+//Se comprueba que se quitan los productos de la forma esperada
+quitar_prod CCCC
+inventario
+  AAAA 1
+  BBBB 2
+//Se colocan varios productos de forma aleatoria para comprobar el funcionamiento de la operación reorganizar
+poner_prod CCCC
+poner_prod DDDD
+poner_items 1 DDDD 2
+  0
+poner_items 1 CCCC 1
+  0
+escribir 1
+  DDDD CCCC
+  BBBB AAAA
+  DDDD BBBB
+  6
+  AAAA 1
+  BBBB 2
+  CCCC 1
+  DDDD 2
+reorganizar 1
+//Se comprueba que la operación reorganizar funciona correctamente
+escribir 1
+  DDDD DDDD
+  BBBB CCCC
+  AAAA BBBB
+  6
+  AAAA 1
+  BBBB 2
+  CCCC 1
+  DDDD 2
+quitar_items 1 AAAA 10
+  9
+quitar_items 1 CCCC 10
+  9
+poner_prod ZZZZ
+poner_items 1 ZZZZ 1
+  0
+//Se comprueba que la posición de los productos es totalmente aleatoria, esta vez se observará qué ocurre cuando hay huecos en la estantería
+escribir 1
+  DDDD DDDD
+  BBBB NULL
+  ZZZZ BBBB
+  5
+  BBBB 2
+  DDDD 2
+  ZZZZ 1
+reorganizar 1
+//Se comprueba que la operación reorganizar funciona correctamente
+escribir 1
+  ZZZZ NULL
+  DDDD DDDD
+  BBBB BBBB
+  5
+  BBBB 2
+  DDDD 2
+  ZZZZ 1
+fin
+
+
+//Salida sin comentar
+
+
+escribir 1
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+escribir 2
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  NULL NULL NULL
+  0
+escribir 3
+  NULL NULL
+  0
+poner_prod BBBB
+poner_prod CCCC
+poner_prod AAAA
+inventario
+  AAAA 0
+  BBBB 0
+  CCCC 0
+poner_prod AAAA
+  error
+inventario
+  AAAA 0
+  BBBB 0
+  CCCC 0
+poner_items 1 DDDD 3
+  error
+escribir 1
+  NULL NULL
+  NULL NULL
+  NULL NULL
+  0
+poner_items 1 BBBB 3
+  0
+escribir 1
+  NULL NULL
+  BBBB NULL
+  BBBB BBBB
+  3
+  BBBB 3
+poner_items 1 AAAA 1
+  0
+escribir 1
+  NULL NULL
+  BBBB AAAA
+  BBBB BBBB
+  4
+  AAAA 1
+  BBBB 3
+poner_items 1 CCCC 10
+  8
+escribir 1
+  CCCC CCCC
+  BBBB AAAA
+  BBBB BBBB
+  6
+  AAAA 1
+  BBBB 3
+  CCCC 2
+inventario
+  AAAA 1
+  BBBB 3
+  CCCC 2
+quitar_items 1 DDDD 3
+  error
+escribir 1
+  CCCC CCCC
+  BBBB AAAA
+  BBBB BBBB
+  6
+  AAAA 1
+  BBBB 3
+  CCCC 2
+quitar_items 1 BBBB 1
+  0
+escribir 1
+  CCCC CCCC
+  BBBB AAAA
+  NULL BBBB
+  5
+  AAAA 1
+  BBBB 2
+  CCCC 2
+quitar_items 1 CCCC 10
+  8
+escribir 1
+  NULL NULL
+  BBBB AAAA
+  NULL BBBB
+  3
+  AAAA 1
+  BBBB 2
+quitar_items 1 CCCC 3
+  3
+escribir 1
+  NULL NULL
+  BBBB AAAA
+  NULL BBBB
+  3
+  AAAA 1
+  BBBB 2
+inventario
+  AAAA 1
+  BBBB 2
+  CCCC 0
+quitar_prod DDDD
+  error
+inventario
+  AAAA 1
+  BBBB 2
+  CCCC 0
+quitar_prod AAAA
+  error
+inventario
+  AAAA 1
+  BBBB 2
+  CCCC 0
+quitar_prod CCCC
+inventario
+  AAAA 1
+  BBBB 2
+poner_prod CCCC
+poner_prod DDDD
+poner_items 1 DDDD 2
+  0
+poner_items 1 CCCC 1
+  0
+escribir 1
+  DDDD CCCC
+  BBBB AAAA
+  DDDD BBBB
+  6
+  AAAA 1
+  BBBB 2
+  CCCC 1
+  DDDD 2
+reorganizar 1
+escribir 1
+  DDDD DDDD
+  BBBB CCCC
+  AAAA BBBB
+  6
+  AAAA 1
+  BBBB 2
+  CCCC 1
+  DDDD 2
+quitar_items 1 AAAA 10
+  9
+quitar_items 1 CCCC 10
+  9
+poner_prod ZZZZ
+poner_items 1 ZZZZ 1
+  0
+escribir 1
+  DDDD DDDD
+  BBBB NULL
+  ZZZZ BBBB
+  5
+  BBBB 2
+  DDDD 2
+  ZZZZ 1
+reorganizar 1
+escribir 1
+  ZZZZ NULL
+  DDDD DDDD
+  BBBB BBBB
+  5
+  BBBB 2
+  DDDD 2
+  ZZZZ 1
+fin
